@@ -15,7 +15,7 @@ Ativar o ambiente virtual: .\venv\Script\activate (Windows) - source \venv\bin\a
 Instalar os requirements: pip install -r requirements.txt
 
 # 5 passo:
-Preencher as informações dentro da planilha dos seus proventos, pasta chamada file tem uma planilha base para você preencher suas informações de proventos.
+Preencher as informações dentro da planilha com as informações dos seus proventos, pasta chamada file tem uma planilha base para você preencher suas informações de proventos.
 
 # 6 passo:
 Executar o streamlit: streamlit run (nome_arquivo.py)
