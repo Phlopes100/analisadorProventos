@@ -31,19 +31,28 @@ if os.path.exists(file):
     ultimo_provento = df.tail(1)['Valor'].sum()
     ultimo_6_meses = df.tail(6)['Valor'].sum()
     ultimo_12_meses = df.tail(12)['Valor'].sum().round(2)
-
-    col1, col2, col3 = st.columns(3)
+    total_por_hora = round(ultimo_provento / (24 * 30), 4)
+    total_por_dia = round(ultimo_provento / 30, 2)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        st.header("Mensal")
-        st.subheader(f"R$ {ultimo_provento}")
+        st.caption("Hora")
+        st.subheader(f"R$ {total_por_hora}")
 
     with col2:
-        st.header("Semestral")
-        st.subheader(f"R$ {ultimo_6_meses}")
+        st.caption("Dia")
+        st.subheader(f"R$ {total_por_dia}")
 
     with col3:
-        st.header("Anual")
+        st.caption("Mensal")
+        st.subheader(f"R$ {ultimo_provento}")
+
+    with col4:
+        st.caption("Semestral")
+        st.subheader(f"R$ {ultimo_6_meses}")
+
+    with col5:
+        st.caption("Anual")
         st.subheader(f"R$ {ultimo_12_meses}")
 
     fig_mes = go.Figure()
