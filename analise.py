@@ -33,6 +33,7 @@ if os.path.exists(file):
     ultimo_12_meses = df.tail(12)['Valor'].sum().round(2)
     total_por_hora = round(ultimo_provento / (24 * 30), 4)
     total_por_dia = round(ultimo_provento / 30, 2)
+    
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
